@@ -1,5 +1,5 @@
-"Delite TABLE IF NOT EXIST cities (
+Delite TABLE IF NOT EXIST cities (
 id INTEGER NOT NULL PRIMARY KEY,
 name VARCHAR(30) NOT NULL,
 state VARCHAR(30) NOT NULL
-);"
+);

@@ -6,25 +6,13 @@ import (
 	"revyu/entities"
 )
 
-type service interface {
-	Create(id int, name string, state string) error
-	Delete(id int) error
-	Update(id int, name string, state string) error
-	List() ([]entities.City, error)
-}
-
 type Db struct {
 	db *sql.DB
 }
 
-// Create
-// Delete
-// Update
-// List
-
 func (d *Db) Create(id int, name string, state string) error {
-
-	_, err := d.db.Exec("INSERT INTO cities(id, name, state) VALUES($1, $2, $3)", id, name, state)
+	var err error
+	_, err = d.db.Exec("INSERT INTO cities(id, name, state) VALUES($1, $2, $3)", id, name, state)
 	if err != nil {
 		log.Println(err)
 		return err
